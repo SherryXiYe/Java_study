@@ -1,0 +1,194 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.bean.Building;
+import com.bean.SystemAdmin;
+import com.jdbc.JDBC;
+
+public class SysAdminDao {
+	
+	//查询系统管理员
+	public SystemAdmin selectSysAdm(String userID,String password)
+	{
+		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		ResultSet resultSet=null;
+		SystemAdmin sysadm=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, userID);
+			prepareStatement.setString(2, password);
+			//执行sql查询
+			resultSet = prepareStatement.executeQuery();
+			if(resultSet.next())
+			{
+				sysadm=new SystemAdmin(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, resultSet);
+		}
+		return sysadm;
+	}
+	
+	//修改系统管理员密码
+	public boolean changePassword(String userid,String oldPassword, String newPassword){
+		String sqlStr="update system_admin set password=? where systemAdminID=? and password=?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		//ResultSet resultSet=null;
+		//SystemAdmin sysadm=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, newPassword);
+			prepareStatement.setString(2, userid);
+			prepareStatement.setString(3, oldPassword);
+			//执行sql语句
+			if(prepareStatement.executeUpdate()>0)
+			{
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, null);
+		}
+		return false;
+	}
+	
+	//插入宿舍楼
+	public boolean insertBuilding(String buildingName,String buildingType,String remarks)
+	{
+		String sqlStr="insert into dorm_building(dormName,sexType,remarks) values(?,?,?)";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, buildingName);
+			prepareStatement.setString(2, buildingType);
+			prepareStatement.setString(3, remarks);
+			//执行sql查询
+			int count=prepareStatement.executeUpdate();
+			if(count>0)
+			{
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, null);
+		}
+		return false;
+	}
+	
+	//查询所有宿舍楼
+	public ArrayList<Building> queryAllBuilding()
+	{
+		ArrayList<Building> result=new ArrayList<Building>();
+		String sqlStr="select dormName,sexType,dormNum,remarks from dorm_building";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;			
+		ResultSet resultSet=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//执行sql查询
+			resultSet = prepareStatement.executeQuery();
+			while(resultSet.next())
+			{	
+				Building tempBuilding=new Building();
+				tempBuilding.setName(resultSet.getString("dormName"));
+				tempBuilding.setType(resultSet.getString("sexType"));
+				tempBuilding.setDormNum(resultSet.getInt("dormNum"));
+				tempBuilding.setRemarks(resultSet.getString("remarks"));
+				result.add(tempBuilding);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, resultSet);
+		}
+			return result;
+	}
+	
+	//查询宿舍楼信息
+	public ArrayList<Building> queryBuilding(Building building)
+	{
+		ArrayList<Building> result=new ArrayList<Building>();
+		String sqlStr="select dormName,sexType,dormNum,remarks from dorm_building where dormName like '%"+building.getName()+"%' and sexType like '%"+building.getType()+"%'";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;			
+		ResultSet resultSet=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//执行sql查询
+			resultSet = prepareStatement.executeQuery();
+			while(resultSet.next())
+			{	
+				Building tempBuilding=new Building();
+				tempBuilding.setName(resultSet.getString("dormName"));
+				tempBuilding.setType(resultSet.getString("sexType"));
+				tempBuilding.setDormNum(resultSet.getInt("dormNum"));
+				tempBuilding.setRemarks(resultSet.getString("remarks"));
+				result.add(tempBuilding);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, resultSet);
+		}
+			return result;
+	}
+		
+	//删除宿舍楼
+	public boolean deleteBuilding(String buildingName)
+	{
+		String sqlStr="delete from dorm_building where dormName = ?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, buildingName);
+			//执行sql语句
+			int count=prepareStatement.executeUpdate();
+			System.out.println("count: "+count);
+			if(count>0)
+			{
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, null);
+		}
+		return false;
+	}
+}

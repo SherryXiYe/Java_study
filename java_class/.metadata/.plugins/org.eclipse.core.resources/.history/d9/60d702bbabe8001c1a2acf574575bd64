@@ -1,0 +1,73 @@
+package com.bean;
+
+public class Building {
+	private int buildingID;
+	private String name;
+	private String type;
+	private int dormNum;
+	private String remarks;
+	
+	public int getDormNum() {
+		return dormNum;
+	}
+	public void setDormNum(int dormNum) {
+		this.dormNum = dormNum;
+	}
+	
+	
+	public Building(int buildingID, String name, String type, int dormNum,
+			String remarks) {
+		super();
+		this.buildingID = buildingID;
+		this.name = name;
+		this.type = type;
+		this.dormNum = dormNum;
+		this.remarks = remarks;
+	}
+	public Building(int buildingID, String name, String type, String remarks) {
+		super();
+		this.buildingID = buildingID;
+		this.name = name;
+		this.type = type;
+		this.remarks = remarks;
+	}
+	public Building() {
+		super();
+	}
+	public Building(String name, String type, String remarks) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.remarks = remarks;
+	}
+	public Building(String name, String type) {
+		super();
+		this.name = name;
+		this.type = type;
+	}
+	
+	public int getBuildingID() {
+		return buildingID;
+	}
+	public void setBuildingID(int buildingID) {
+		this.buildingID = buildingID;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+}

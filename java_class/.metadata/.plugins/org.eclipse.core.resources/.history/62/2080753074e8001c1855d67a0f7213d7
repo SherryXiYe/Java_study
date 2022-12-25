@@ -1,0 +1,120 @@
+package com.view.systemAdm;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JTextArea;
+
+public class AddBuildingFrame extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField newBuildingName;
+	private JComboBox buildingTypeCombo;
+	private JTextArea remarksTextArea ;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AddBuildingFrame frame = new AddBuildingFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public AddBuildingFrame() {
+		setTitle("\u6DFB\u52A0\u5BBF\u820D\u697C");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 520, 403);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		setLocationRelativeTo(null);
+		
+		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
+		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setBounds(75, 59, 146, 29);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u820D\u697C\u7C7B\u578B");
+		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(75, 124, 146, 29);
+		contentPane.add(lblNewLabel_1);
+		
+		newBuildingName = new JTextField();
+		newBuildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		newBuildingName.setBounds(230, 56, 130, 32);
+		contentPane.add(newBuildingName);
+		newBuildingName.setColumns(10);
+		
+		buildingTypeCombo = new JComboBox();
+		buildingTypeCombo.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		buildingTypeCombo.setModel(new DefaultComboBoxModel(new String[]{"ÄÐÇÞ","Å®ÇÞ"}));
+		buildingTypeCombo.setBounds(230, 122, 130, 32);
+		contentPane.add(buildingTypeCombo);
+		
+		JButton btnNewButton = new JButton("\u786E\u8BA4");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				confirmAddBuilding(e);
+			}
+		});
+		btnNewButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		btnNewButton.setBounds(402, 300, 98, 37);
+		contentPane.add(btnNewButton);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(432, 213, -319, 82);
+		contentPane.add(textArea);
+		
+		remarksTextArea = new JTextArea();
+		remarksTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		remarksTextArea.setLineWrap(true);
+		remarksTextArea.setBounds(172, 197, 273, 82);
+		contentPane.add(remarksTextArea);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("\u5907\u6CE8");
+		lblNewLabel_1_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_1_1.setBounds(75, 191, 111, 29);
+		contentPane.add(lblNewLabel_1_1);
+	}
+
+	protected void confirmAddBuilding(ActionEvent e) {
+		// TODO Auto-generated method stub
+		String newBuildingName=this.newBuildingName.getText();
+		String buildingType=(String)this.buildingTypeCombo.getSelectedItem();
+		String remarks=this.remarksTextArea.getText();
+		if("".equals(newBuildingName)||newBuildingName==null){
+			JOptionPane.showMessageDialog(this, "ÇëÊäÈëÒªÌí¼ÓµÄËÞÉáÂ¥Ãû³Æ");
+		}else{
+			
+		}
+	}
+}
