@@ -26,7 +26,7 @@ public class AddBuildingFrame extends JFrame {
 	@SuppressWarnings("rawtypes")
 	private JComboBox buildingTypeCombo;
 	private JTextArea remarksTextArea ;
-	private static final String[] buildingType={"ÄÐÇÞ","Å®ÇÞ"};
+	private static final String[] buildingType={"ï¿½ï¿½ï¿½ï¿½","Å®ï¿½ï¿½"};
 	private BuildingFrame buildingFrame;
 	/**
 	 * Launch the application.
@@ -63,23 +63,23 @@ public class AddBuildingFrame extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(75, 59, 146, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u820D\u697C\u7C7B\u578B");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(75, 124, 146, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		newBuildingName = new JTextField();
-		newBuildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		newBuildingName.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		newBuildingName.setBounds(230, 56, 130, 32);
 		contentPane.add(newBuildingName);
 		newBuildingName.setColumns(10);
 		
 		buildingTypeCombo = new JComboBox();
-		buildingTypeCombo.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		buildingTypeCombo.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		buildingTypeCombo.setModel(new DefaultComboBoxModel(buildingType));
 		buildingTypeCombo.setBounds(230, 122, 130, 32);
 		contentPane.add(buildingTypeCombo);
@@ -90,7 +90,7 @@ public class AddBuildingFrame extends JFrame {
 				confirmAddBuilding(e);
 			}
 		});
-		btnNewButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		btnNewButton.setBounds(402, 300, 98, 37);
 		contentPane.add(btnNewButton);
 		
@@ -99,13 +99,13 @@ public class AddBuildingFrame extends JFrame {
 		contentPane.add(textArea);
 		
 		remarksTextArea = new JTextArea();
-		remarksTextArea.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		remarksTextArea.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		remarksTextArea.setLineWrap(true);
 		remarksTextArea.setBounds(172, 197, 273, 82);
 		contentPane.add(remarksTextArea);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("\u5907\u6CE8");
-		lblNewLabel_1_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_1_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_1_1.setBounds(75, 191, 111, 29);
 		contentPane.add(lblNewLabel_1_1);
 	}
@@ -121,15 +121,15 @@ public class AddBuildingFrame extends JFrame {
 		String buildingType=(String)this.buildingTypeCombo.getSelectedItem();
 		String remarks=this.remarksTextArea.getText();
 		if("".equals(newBuildingName)||newBuildingName==null){
-			JOptionPane.showMessageDialog(this, "ÇëÊäÈëÒªÌí¼ÓµÄËÞÉáÂ¥Ãû³Æ");
+			JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½");
 		}else{
 			SysAdminDao sysAdmDao=new SysAdminDao();
 			boolean success=sysAdmDao.insertBuilding(newBuildingName,buildingType,remarks);
 			if(success){
-				JOptionPane.showMessageDialog(this, "²åÈë³É¹¦£¡");
+				JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½");
 				buildingFrame.queryAllBuilding();
 			}else{
-				JOptionPane.showMessageDialog(this, "²åÈëÊ§°Ü");
+				JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½");
 			}
 			reset();
 		}

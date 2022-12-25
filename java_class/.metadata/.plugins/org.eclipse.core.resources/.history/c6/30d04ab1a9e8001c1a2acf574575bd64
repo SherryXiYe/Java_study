@@ -51,39 +51,39 @@ public class DormAdmManage extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u7BA1\u8D26\u53F7");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel.setBounds(50, 21, 108, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u7BA1\u540D\u5B57");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(372, 21, 108, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\u7BA1\u7406\u5BBF\u820D\u697C");
-		lblNewLabel_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(35, 81, 108, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("\u6027\u522B");
-		lblNewLabel_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_3.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_3.setBounds(393, 81, 108, 29);
 		contentPane.add(lblNewLabel_3);
 		
 		textField = new JTextField();
-		textField.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		textField.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		textField.setBounds(143, 18, 130, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		textField_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		textField_1.setColumns(10);
 		textField_1.setBounds(464, 18, 130, 30);
 		contentPane.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		textField_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		textField_2.setColumns(10);
 		textField_2.setBounds(143, 78, 130, 30);
 		contentPane.add(textField_2);
@@ -93,7 +93,7 @@ public class DormAdmManage extends JFrame {
 		contentPane.add(comboBox);
 		
 		JButton queryButton = new JButton("\u67E5\u8BE2");
-		queryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton.setFocusable(false);
 		queryButton.setBounds(255, 135, 89, 32);
 		contentPane.add(queryButton);
@@ -113,19 +113,19 @@ public class DormAdmManage extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton queryButton_1 = new JButton("\u589E\u52A0");
-		queryButton_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton_1.setFocusable(false);
 		queryButton_1.setBounds(350, 135, 89, 32);
 		contentPane.add(queryButton_1);
 		
 		JButton queryButton_2 = new JButton("\u67E5\u8BE2");
-		queryButton_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton_2.setFocusable(false);
 		queryButton_2.setBounds(445, 135, 89, 32);
 		contentPane.add(queryButton_2);
 		
 		JButton queryButton_3 = new JButton("\u67E5\u8BE2");
-		queryButton_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton_3.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton_3.setFocusable(false);
 		queryButton_3.setBounds(540, 135, 89, 32);
 		contentPane.add(queryButton_3);

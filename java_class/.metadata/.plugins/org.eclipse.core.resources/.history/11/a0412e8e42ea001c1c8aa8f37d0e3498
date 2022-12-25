@@ -15,22 +15,22 @@ import com.jdbc.JDBC;
 
 public class SysAdminDao {
 	
-	//²éÑ¯ÏµÍ³¹ÜÀíÔ±
+	//ï¿½ï¿½Ñ¯ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ô±
 	public SystemAdmin selectSysAdm(String userID,String password)
 	{
 		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		ResultSet resultSet=null;
 		SystemAdmin sysadm=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, userID);
 			prepareStatement.setString(2, password);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			if(resultSet.next())
 			{
@@ -45,22 +45,22 @@ public class SysAdminDao {
 		return sysadm;
 	}
 	
-	//ÐÞ¸ÄÏµÍ³¹ÜÀíÔ±ÃÜÂë
+	//ï¿½Þ¸ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 	public boolean changePassword(String userid,String oldPassword, String newPassword){
 		String sqlStr="update system_admin set password=? where systemAdminID=? and password=?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		//ResultSet resultSet=null;
 		//SystemAdmin sysadm=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, newPassword);
 			prepareStatement.setString(2, userid);
 			prepareStatement.setString(3, oldPassword);
-			//Ö´ÐÐsqlÓï¾ä
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½ï¿½
 			if(prepareStatement.executeUpdate()>0)
 			{
 				return true;
@@ -74,21 +74,21 @@ public class SysAdminDao {
 		return false;
 	}
 	
-	//²åÈëËÞÉáÂ¥
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	public boolean insertBuilding(String buildingName,String buildingType,String remarks)
 	{
 		String sqlStr="insert into dorm_building(dormName,sexType,remarks) values(?,?,?)";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, buildingName);
 			prepareStatement.setString(2, buildingType);
 			prepareStatement.setString(3, remarks);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			int count=prepareStatement.executeUpdate();
 			if(count>0)
 			{
@@ -103,19 +103,19 @@ public class SysAdminDao {
 		return false;
 	}
 	
-	//²éÑ¯ËùÓÐËÞÉáÂ¥
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	public ArrayList<Building> queryAllBuilding()
 	{
 		ArrayList<Building> result=new ArrayList<Building>();
 		String sqlStr="select dormName,sexType,admNum,dormNum,remarks from dorm_building";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;			
 		ResultSet resultSet=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next())
 			{	
@@ -136,19 +136,19 @@ public class SysAdminDao {
 			return result;
 	}
 	
-	//²éÑ¯ËÞÉáÂ¥ÐÅÏ¢
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½Ï¢
 	public ArrayList<Building> queryBuilding(Building building)
 	{
 		ArrayList<Building> result=new ArrayList<Building>();
 		String sqlStr="select dormName,sexType,admNum,dormNum,remarks from dorm_building where dormName like '%"+building.getName()+"%' and sexType like '%"+building.getType()+"%'";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;			
 		ResultSet resultSet=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next())
 			{	
@@ -169,19 +169,19 @@ public class SysAdminDao {
 			return result;
 	}
 		
-	//É¾³ýËÞÉáÂ¥
+	//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	public boolean deleteBuilding(String buildingName)
 	{
 		String sqlStr="delete from dorm_building where dormName = ?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;	
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, buildingName);
-			//Ö´ÐÐsqlÓï¾ä
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½ï¿½
 			int count=prepareStatement.executeUpdate();
 			if(count>0)
 			{
@@ -196,21 +196,21 @@ public class SysAdminDao {
 		return false;
 	}
 	
-	//¸üÐÂËÞÉáÂ¥£¨´æ´¢¹ý³Ì£©Ãû³Æ»òÐÔ±ð£¬È»ºóÆäËüÊµÌåÒÀÀµÓÚËÞÉáÂ¥Ãû³ÆµÄÊôÐÔÒ²»á¸üÐÂ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½ï¿½Ì£ï¿½ï¿½ï¿½ï¿½Æ»ï¿½ï¿½Ô±ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½
 	public boolean updateBuilding(String oldbuildingName,String newBuildingName,String sexType)
 	{
 		String sqlStr="{call buildingNameU(?,?,?)}";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//µ÷ÓÃ´æ´¢¹ý³Ì
+		//ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½ï¿½
 		CallableStatement stmt=null;
 		try {
 			stmt=conn.prepareCall(sqlStr);
-			//ÉèÖÃ´æ´¢¹ý³Ì²ÎÊý
+			//ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½Ì²ï¿½ï¿½ï¿½
 			stmt.setString(1,oldbuildingName);
 			stmt.setString(2, newBuildingName);
 			stmt.setString(3, sexType);
-			//Ö´ÐÐ´æ´¢¹ý³Ì
+			//Ö´ï¿½Ð´æ´¢ï¿½ï¿½ï¿½ï¿½
 			int count=stmt.executeUpdate();
 			if(count>0)
 			{
@@ -226,19 +226,19 @@ public class SysAdminDao {
 	}
 
 	
-	//²éÑ¯ËùÓÐËÞ¹Ü
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½
 	public ArrayList<DormAdmin> queryAllDormAdm()
 	{
 		ArrayList<DormAdmin> result=new ArrayList<DormAdmin>();
 		String sqlStr="select dormAdminID,name,buildingName,sex from dorm_admin";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;			
 		ResultSet resultSet=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next())
 			{	
@@ -258,19 +258,19 @@ public class SysAdminDao {
 			return result;
 	}
 	
-	//²éÑ¯ËÞ¹ÜÐÅÏ¢
+	//ï¿½ï¿½Ñ¯ï¿½Þ¹ï¿½ï¿½ï¿½Ï¢
 	public ArrayList<DormAdmin> queryDormAdm(DormAdmin dormAdm)
 	{
 		ArrayList<DormAdmin> result=new ArrayList<DormAdmin>();
 		String sqlStr="select dormAdminID,name,buildingName,sex from dorm_admin where dormAdminID like '%"+dormAdm.getDormAdmID()+"%' and name like '%"+dormAdm.getName()+"%' and buildingName like '%"+dormAdm.getBuildingName()+"%' and sex like '%" +dormAdm.getSex()+"%'";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;			
 		ResultSet resultSet=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next())
 			{	
@@ -290,20 +290,20 @@ public class SysAdminDao {
 			return result;
 	}
 	
-	//É¾³ýËÞ¹Ü(ÊÂ¼þ)
+	//É¾ï¿½ï¿½ï¿½Þ¹ï¿½(ï¿½Â¼ï¿½)
 	public boolean deleteDormAdm(String dormAdmID,String buildingName)
 	{
 		String sqlStr="{call dormAdmDel(?,?)}";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//µ÷ÓÃ´æ´¢¹ý³Ì
+		//ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½ï¿½
 		CallableStatement stmt=null;
 		try {
 			stmt=conn.prepareCall(sqlStr);
-			//ÉèÖÃ´æ´¢¹ý³Ì²ÎÊý
+			//ï¿½ï¿½ï¿½Ã´æ´¢ï¿½ï¿½ï¿½Ì²ï¿½ï¿½ï¿½
 			stmt.setString(1,dormAdmID);
 			stmt.setString(2,buildingName);
-			//Ö´ÐÐ´æ´¢¹ý³Ì
+			//Ö´ï¿½Ð´æ´¢ï¿½ï¿½ï¿½ï¿½
 			int count=stmt.executeUpdate();
 			if(count>0)
 			{
@@ -318,23 +318,23 @@ public class SysAdminDao {
 		return false;
 	}
 
-	//²åÈëËÞ¹Ü(´¥·¢Æ÷£©
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public boolean insertDormAdm(DormAdmin dormAdm)
 	{
 		String sqlStr="insert into dorm_admin values(?,?,?,?,?)";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, dormAdm.getDormAdmID());
 			prepareStatement.setString(2, dormAdm.getName());
 			prepareStatement.setString(3, dormAdm.getPassword());
 			prepareStatement.setString(4, dormAdm.getBuildingName());
 			prepareStatement.setString(5, dormAdm.getSex());
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			int count=prepareStatement.executeUpdate();
 			if(count>0)
 			{
@@ -349,19 +349,19 @@ public class SysAdminDao {
 		return false;
 	}
 	
-	//²éÑ¯ÊÓÍ¼
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½Í¼
 	public ArrayList<DormAdmin> womanBuilding()
 	{
 		ArrayList<DormAdmin> result=new ArrayList<DormAdmin>();
 		String sqlStr="select * from dormadm_woman";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;			
 		ResultSet resultSet=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next())
 			{	

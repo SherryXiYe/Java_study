@@ -50,27 +50,27 @@ public class ChangePassword extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("\u5F53\u524D\u7528\u6237\uFF1A");
 		lblNewLabel.setIcon(new ImageIcon("D:\\Java\\eclipse workplace\\dormSystem\\src\\images\\\u8D26\u53F7.png"));
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(36, 21, 147, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel userInfo = new JLabel("["+userType+"] "+userID);
-		userInfo.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		userInfo.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		userInfo.setBounds(176, 21, 277, 29);
 		contentPane.add(userInfo);
 		
 		JLabel lblNewLabel_2 = new JLabel("\u539F\u5BC6\u7801");
-		lblNewLabel_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(102, 90, 108, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("\u65B0\u5BC6\u7801");
-		lblNewLabel_2_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2_1.setBounds(102, 160, 108, 29);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("\u786E\u8BA4\u5BC6\u7801");
-		lblNewLabel_2_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2_2.setBounds(86, 230, 108, 29);
 		contentPane.add(lblNewLabel_2_2);
 		
@@ -80,7 +80,7 @@ public class ChangePassword extends JFrame {
 				confirmChange(e);
 			}
 		});
-		btnNewButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		btnNewButton.setBounds(405, 288, 101, 37);
 		contentPane.add(btnNewButton);
 		
@@ -90,22 +90,22 @@ public class ChangePassword extends JFrame {
 				reset(e);
 			}
 		});
-		resetButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		resetButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		resetButton.setBounds(302, 287, 101, 37);
 		contentPane.add(resetButton);
 		
 		reNewPass = new JPasswordField();
-		reNewPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		reNewPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		reNewPass.setBounds(230, 230, 130, 32);
 		contentPane.add(reNewPass);
 		
 		newPass = new JPasswordField();
-		newPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		newPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		newPass.setBounds(230, 160, 130, 32);
 		contentPane.add(newPass);
 		
 		oldPass = new JPasswordField();
-		oldPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		oldPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		oldPass.setBounds(230, 90, 130, 32);
 		contentPane.add(oldPass);
 		
@@ -114,45 +114,45 @@ public class ChangePassword extends JFrame {
 	}
 	
 	protected void confirmChange(ActionEvent e) {
-		// È·ÈÏÐÞ¸ÄÃÜÂë
+		// È·ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 		String oldPassword=String.valueOf(this.oldPass.getPassword());
 		String newPassword=String.valueOf(this.newPass.getPassword());
 		String reNewPassword=String.valueOf(this.reNewPass.getPassword());
 		if("".equals(oldPassword)||oldPassword==null){
-			JOptionPane.showMessageDialog(this, "ÇëÊäÈëÔ­ÃÜÂë");
+			JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½");
 		}
 		else if("".equals(newPassword)||newPassword==null){
-			JOptionPane.showMessageDialog(this, "ÇëÊäÈëÐÂÃÜÂë");
+			JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		}
 		else if("".equals(reNewPassword)||reNewPassword==null){
-			JOptionPane.showMessageDialog(this, "ÇëÔÙ´ÎÊäÈëÐÂÃÜÂë");
+			JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		}
 		
-		if("ÏµÍ³¹ÜÀíÔ±".equals(userType.getType())){
+		if("ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ô±".equals(userType.getType())){
 			SysAdminDao sysAdmDao=new SysAdminDao();
 			boolean updated=sysAdmDao.changePassword(userID, oldPassword,newPassword);
 			if(updated){
-				JOptionPane.showMessageDialog(this, "ÐÞ¸Ä³É¹¦");
+				JOptionPane.showMessageDialog(this, "ï¿½Þ¸Ä³É¹ï¿½");
 				reseti();
 				this.dispose();
 			}else{
-				JOptionPane.showMessageDialog(this, "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+				JOptionPane.showMessageDialog(this, "ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				reseti();
 			}
 			return;
 		}
 		
-		if("ËÞÉá¹ÜÀíÔ±".equals(userType.getType())){
+		if("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±".equals(userType.getType())){
 			return;
 		}
 		
-		if("Ñ§Éú".equals(userType.getType())){
+		if("Ñ§ï¿½ï¿½".equals(userType.getType())){
 			return;
 		}
 	}
 
 	protected void reset(ActionEvent e) {
-		// ÖØÖÃ
+		// ï¿½ï¿½ï¿½ï¿½
 		oldPass.setText("");
 		newPass.setText("");
 		reNewPass.setText("");

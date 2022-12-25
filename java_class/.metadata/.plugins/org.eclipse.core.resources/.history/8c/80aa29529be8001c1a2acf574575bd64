@@ -40,7 +40,7 @@ public class BuildingFrame extends JFrame {
 	private static Building selectBuilding=new Building();
 	
 	@SuppressWarnings("unused")
-	private static final String[] sexType={"","ÄÐÇÞ","Å®ÇÞ"};
+	private static final String[] sexType={"","ï¿½ï¿½ï¿½ï¿½","Å®ï¿½ï¿½"};
 	
 	/**
 	 * Launch the application.
@@ -74,12 +74,12 @@ public class BuildingFrame extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel.setBounds(48, 21, 108, 29);
 		contentPane.add(lblNewLabel);
 		
 		buildingName = new JTextField();
-		buildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		buildingName.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		buildingName.setBounds(166, 20, 130, 30);
 		contentPane.add(buildingName);
 		buildingName.setColumns(10);
@@ -90,7 +90,7 @@ public class BuildingFrame extends JFrame {
 				queryBuilding(e);
 			}
 		});
-		queryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton.setBounds(331, 80, 89, 32);
 		contentPane.add(queryButton);
 		
@@ -100,12 +100,12 @@ public class BuildingFrame extends JFrame {
 				insertBuilding(e);
 			}
 		});
-		insertButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		insertButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		insertButton.setBounds(428, 80, 89, 32);
 		contentPane.add(insertButton);
 		
 		changeButton = new JButton("\u4FEE\u6539");
-		changeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		changeButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		changeButton.setBounds(524, 80, 89, 32);
 		contentPane.add(changeButton);
 		
@@ -115,7 +115,7 @@ public class BuildingFrame extends JFrame {
 				deleteBuilding(e);
 			}
 		});
-		deleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		deleteButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		deleteButton.setBounds(617, 80, 89, 32);
 		contentPane.add(deleteButton);
 		
@@ -130,11 +130,11 @@ public class BuildingFrame extends JFrame {
 				selectRow(e);
 			}
 		});
-		//ÉèÖÃÓÃ»§²»¿ÉÍÏ¶¯
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 		buildingTable.getTableHeader().setReorderingAllowed(false);
-		//ÉèÖÃ±í¸ñ¸ß¶È
+		//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ß¶ï¿½
 		buildingTable.setRowHeight(20);
-		//ÉèÖÃ±í¸ñ¾ÓÖÐÏÔÊ¾
+		//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
 		DefaultTableCellRenderer r=new DefaultTableCellRenderer();
 		r.setHorizontalAlignment(JLabel.CENTER);
 		buildingTable.setDefaultRenderer(Object.class, r);
@@ -154,12 +154,12 @@ public class BuildingFrame extends JFrame {
 		scrollPane.setViewportView(buildingTable);
 		
 		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u820D\u697C\u7C7B\u578B");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(352, 21, 108, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		sexTypeComb = new JComboBox();
-		sexTypeComb.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		sexTypeComb.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		sexTypeComb.setModel(new DefaultComboBoxModel(sexType));
 		sexTypeComb.setBounds(470, 20, 130, 30);
 		contentPane.add(sexTypeComb);
@@ -168,22 +168,22 @@ public class BuildingFrame extends JFrame {
 		queryAllBuilding();
 	}
 	
-	//É¾³ýËÞÉáÂ¥
+	//É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	protected void deleteBuilding(ActionEvent e) {
-		boolean confirmDelete=JOptionPane.showConfirmDialog(this, "È·¶¨ÒªÉ¾³ý¸Ã¶°ËÞÉáÂ¥Âð£¿","ÕýÔÚÉ¾³ý¡­¡­",JOptionPane.YES_NO_OPTION)==JOptionPane.OK_OPTION;
+		boolean confirmDelete=JOptionPane.showConfirmDialog(this, "È·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Â¥ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",JOptionPane.YES_NO_OPTION)==JOptionPane.OK_OPTION;
 		if(confirmDelete){
 			SysAdminDao sysAdmDao=new SysAdminDao();
 			boolean success=sysAdmDao.deleteBuilding(selectBuilding.getName());
 			if(success){
-				JOptionPane.showMessageDialog(this, "É¾³ý³É¹¦£¡");
+				JOptionPane.showMessageDialog(this, "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½");
 				queryAllBuilding();
 			}else{
-				JOptionPane.showMessageDialog(this, "É¾³ýÊ§°Ü");
+				JOptionPane.showMessageDialog(this, "É¾ï¿½ï¿½Ê§ï¿½ï¿½");
 			}
 		}
 	}
 
-	//Êó±êµã»÷Ä³Ò»ÐÐ£¬Ñ¡ÖÐ¸ÄÐÐ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ä³Ò»ï¿½Ð£ï¿½Ñ¡ï¿½Ð¸ï¿½ï¿½ï¿½
 	protected void selectRow(MouseEvent e) {
 		selectBuilding.setName(dtm.getValueAt(this.buildingTable.getSelectedRow(), 1).toString());
 		selectBuilding.setType(dtm.getValueAt(this.buildingTable.getSelectedRow(), 2).toString());
@@ -191,7 +191,7 @@ public class BuildingFrame extends JFrame {
 		this.changeButton.setEnabled(false);
 	}
 
-	//²éÑ¯ËÞÉáÂ¥
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Â¥
 	@SuppressWarnings("unchecked")
 	protected void queryBuilding(ActionEvent e) {
 		String buildingName=this.buildingName.getText();
@@ -217,7 +217,7 @@ public class BuildingFrame extends JFrame {
 		}
 	}
 
-	//Ôö¼ÓËÞÉáÂ¥
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	protected void insertBuilding(ActionEvent e) {
 		if(addBuilding==null){
 			addBuilding=new AddBuildingFrame(this);
@@ -225,7 +225,7 @@ public class BuildingFrame extends JFrame {
 		addBuilding.setVisible(true);
 	}
 
-	//²éÑ¯È«²¿ËÞÉáÂ¥
+	//ï¿½ï¿½Ñ¯È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void queryAllBuilding(){
 		dtm.setRowCount(0);

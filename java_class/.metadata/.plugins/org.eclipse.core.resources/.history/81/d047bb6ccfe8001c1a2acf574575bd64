@@ -33,7 +33,7 @@ public class AddDormAdm extends JFrame {
 	@SuppressWarnings("rawtypes")
 	private JComboBox sex;
 	private JTextField buildingName;
-	private static final String[] sexType={"ÄÐ","Å®"};
+	private static final String[] sexType={"ï¿½ï¿½","Å®"};
 	private DormAdmManage dormAdmManage;
 	
 	/**
@@ -71,50 +71,50 @@ public class AddDormAdm extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u7BA1\u8D26\u53F7");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(60, 40, 146, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u7BA1\u5BC6\u7801");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(60, 100, 145, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\u5BBF\u7BA1\u59D3\u540D");
-		lblNewLabel_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(60, 160, 146, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
-		lblNewLabel_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_3.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_3.setBounds(56, 280, 146, 29);
 		contentPane.add(lblNewLabel_3);
 		
 		userID = new JTextField();
-		userID.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		userID.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		userID.setColumns(10);
 		userID.setBounds(199, 38, 130, 30);
 		contentPane.add(userID);
 		
 		sex = new JComboBox();
-		sex.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		sex.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		sex.setModel(new DefaultComboBoxModel(sexType));
 		sex.setBounds(199, 220, 130, 30);
 		contentPane.add(sex);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("\u5BBF\u7BA1\u6027\u522B");
-		lblNewLabel_2_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2_1.setBounds(60, 220, 117, 29);
 		contentPane.add(lblNewLabel_2_1);
 		
 		Name = new JTextField();
-		Name.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		Name.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		Name.setColumns(10);
 		Name.setBounds(199, 156, 130, 30);
 		contentPane.add(Name);
 		
 		password = new JPasswordField();
-		password.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		password.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		password.setText("30");
 		password.setBounds(199, 100, 130, 35);
 		contentPane.add(password);
@@ -125,12 +125,12 @@ public class AddDormAdm extends JFrame {
 				insertDormAdm(e);
 			}
 		});
-		btnNewButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		btnNewButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		btnNewButton.setBounds(307, 334, 98, 37);
 		contentPane.add(btnNewButton);
 		
 		buildingName = new JTextField();
-		buildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		buildingName.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		buildingName.setColumns(10);
 		buildingName.setBounds(199, 280, 130, 30);
 		contentPane.add(buildingName);
@@ -150,7 +150,7 @@ public class AddDormAdm extends JFrame {
 		}
 		return false;
 	}
-	//²åÈëËÞ¹Ü
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½
 	protected void insertDormAdm(ActionEvent e) {
 		String userID=this.userID.getText();
 		String sex=(String)this.sex.getSelectedItem();
@@ -158,16 +158,16 @@ public class AddDormAdm extends JFrame {
 		String password=String.valueOf(this.password.getPassword());
 		String building=(String)this.sex.getSelectedItem();
 		if(is_empty(userID)||is_empty(sex)||is_empty(name)||is_empty(password)||is_empty(building)){
-			JOptionPane.showMessageDialog(this, "ÇëÊäÈëÈ«²¿ÐÅÏ¢");
+			JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ï¢");
 		}else{
 			DormAdmin dormAdm=new DormAdmin(userID,name,password,building,sex);
 			SysAdminDao sysAdmDao=new SysAdminDao();
 			boolean success=sysAdmDao.insertDormAdm(dormAdm);
 			if(success){
-				JOptionPane.showMessageDialog(this, "²åÈë³É¹¦£¡");
+				JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½");
 				dormAdmManage.queryAllDormAdm();
 			}else{
-				JOptionPane.showMessageDialog(this, "²åÈëÊ§°Ü,ÇëÖØÐÂÊäÈë");
+				JOptionPane.showMessageDialog(this, "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			}
 			reset();
 		}

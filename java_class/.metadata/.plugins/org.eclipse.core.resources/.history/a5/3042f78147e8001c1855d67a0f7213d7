@@ -13,18 +13,18 @@ public class SysAdminDao {
 	public SystemAdmin selectSysAdm(String userID,String password)
 	{
 		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		ResultSet resultSet=null;
 		SystemAdmin sysadm=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, userID);
 			prepareStatement.setString(2, password);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			if(resultSet.next())
 			{

@@ -41,23 +41,23 @@ public class SysAdmFrame extends JFrame {
 		menuBar.add(mnNewMenu);
 		
 		JMenu mnNewMenu_1 = new JMenu("\u7CFB\u7EDF\u8BBE\u7F6E");
-		mnNewMenu_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 19));
+		mnNewMenu_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 19));
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("\u4FEE\u6539\u5BC6\u7801");
-		mntmNewMenuItem.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 19));
+		mntmNewMenuItem.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 19));
 		mnNewMenu_1.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\u9000\u51FA\u767B\u5F55");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
-			//ÍË³öµÇÂ¼
+			//ï¿½Ë³ï¿½ï¿½ï¿½Â¼
 			public void actionPerformed(ActionEvent e) {
 				LoginFrame login=new LoginFrame();
 				login.setVisible(true);
 				this.dispose();
 			}
 		});
-		mntmNewMenuItem_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 19));
+		mntmNewMenuItem_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 19));
 		mnNewMenu_1.add(mntmNewMenuItem_1);
 		
 		contentPane = new JPanel();

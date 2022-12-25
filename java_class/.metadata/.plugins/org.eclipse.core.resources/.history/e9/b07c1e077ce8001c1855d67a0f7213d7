@@ -10,22 +10,22 @@ import com.jdbc.JDBC;
 
 public class SysAdminDao {
 	
-	//²éÑ¯ÏµÍ³¹ÜÀíÔ±
+	//ï¿½ï¿½Ñ¯ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ô±
 	public SystemAdmin selectSysAdm(String userID,String password)
 	{
 		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		ResultSet resultSet=null;
 		SystemAdmin sysadm=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, userID);
 			prepareStatement.setString(2, password);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			resultSet = prepareStatement.executeQuery();
 			if(resultSet.next())
 			{
@@ -40,22 +40,22 @@ public class SysAdminDao {
 		return sysadm;
 	}
 	
-	//ÐÞ¸ÄÏµÍ³¹ÜÀíÔ±ÃÜÂë
+	//ï¿½Þ¸ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 	public boolean changePassword(String userid,String oldPassword, String newPassword){
 		String sqlStr="update system_admin set password=? where systemAdminID=? and password=?";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		//ResultSet resultSet=null;
 		//SystemAdmin sysadm=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, newPassword);
 			prepareStatement.setString(2, userid);
 			prepareStatement.setString(3, oldPassword);
-			//Ö´ÐÐsqlÓï¾ä
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½ï¿½
 			if(prepareStatement.executeUpdate()>0)
 			{
 				return true;
@@ -72,17 +72,17 @@ public class SysAdminDao {
 	public boolean insertBuilding(String buildingName,String buildingType,String remarks)
 	{
 		String sqlStr="insert into dorm_building(dormName,sexType,remarks) values(?,?,?)";
-		//»ñµÃÁ¬½Ó¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 		Connection conn=JDBC.getConnection();
-		//´´½¨Ô¤±àÒë»·¾³
+		//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ë»·ï¿½ï¿½
 		PreparedStatement prepareStatement=null;
 		try {
 			prepareStatement=conn.prepareStatement(sqlStr);
-			//ÉèÖÃsqlÓï¾ä²ÎÊý
+			//ï¿½ï¿½ï¿½ï¿½sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			prepareStatement.setString(1, buildingName);
 			prepareStatement.setString(2, buildingType);
 			prepareStatement.setString(2, remarks);
-			//Ö´ÐÐsql²éÑ¯
+			//Ö´ï¿½ï¿½sqlï¿½ï¿½Ñ¯
 			int count=prepareStatement.executeUpdate();
 			if(count>0)
 			{

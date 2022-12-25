@@ -62,18 +62,18 @@ public class BuildingFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(21, 21, 108, 29);
 		contentPane.add(lblNewLabel);
 		
 		buildingName = new JTextField();
-		buildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		buildingName.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		buildingName.setBounds(137, 17, 130, 32);
 		contentPane.add(buildingName);
 		buildingName.setColumns(10);
 		
 		JButton queryButton = new JButton("\u67E5\u8BE2");
-		queryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		queryButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		queryButton.setBounds(285, 17, 89, 32);
 		contentPane.add(queryButton);
 		
@@ -83,17 +83,17 @@ public class BuildingFrame extends JFrame {
 				insertBuilding(e);
 			}
 		});
-		insertButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		insertButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		insertButton.setBounds(421, 16, 89, 32);
 		contentPane.add(insertButton);
 		
 		JButton changeButton = new JButton("\u4FEE\u6539");
-		changeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		changeButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		changeButton.setBounds(519, 16, 89, 32);
 		contentPane.add(changeButton);
 		
 		JButton deleteButton = new JButton("\u5220\u9664");
-		deleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		deleteButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		deleteButton.setBounds(617, 16, 89, 32);
 		contentPane.add(deleteButton);
 		
@@ -116,7 +116,7 @@ public class BuildingFrame extends JFrame {
 		queryAllBuilding();
 	}
 	
-	//Ôö¼ÓËÞÉáÂ¥
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	protected void insertBuilding(ActionEvent e) {
 		if(addBuilding==null){
 			addBuilding=new AddBuildingFrame();
@@ -125,7 +125,7 @@ public class BuildingFrame extends JFrame {
 		queryAllBuilding();
 	}
 
-	//²éÑ¯È«²¿ËÞÉáÂ¥
+	//ï¿½ï¿½Ñ¯È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void queryAllBuilding(){
 		dtm.setRowCount(0);

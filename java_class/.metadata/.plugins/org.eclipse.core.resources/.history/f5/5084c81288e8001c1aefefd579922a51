@@ -49,33 +49,33 @@ public class BuildingFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(21, 21, 108, 29);
 		contentPane.add(lblNewLabel);
 		
 		buildingName = new JTextField();
-		buildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		buildingName.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		buildingName.setBounds(137, 17, 130, 32);
 		contentPane.add(buildingName);
 		buildingName.setColumns(10);
 		
 		JButton querryButton = new JButton("\u67E5\u8BE2");
-		querryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		querryButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		querryButton.setBounds(285, 17, 89, 32);
 		contentPane.add(querryButton);
 		
 		JButton insertButton = new JButton("\u589E\u52A0");
-		insertButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		insertButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		insertButton.setBounds(421, 16, 89, 32);
 		contentPane.add(insertButton);
 		
 		JButton changeButton = new JButton("\u4FEE\u6539");
-		changeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		changeButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		changeButton.setBounds(519, 16, 89, 32);
 		contentPane.add(changeButton);
 		
 		JButton deleteButton = new JButton("\u5220\u9664");
-		deleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		deleteButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		deleteButton.setBounds(617, 16, 89, 32);
 		contentPane.add(deleteButton);
 		
@@ -91,7 +91,7 @@ public class BuildingFrame extends JFrame {
 				"\u5BBF\u820D\u697C\u540D\u79F0", "\u5BBF\u820D\u697C\u7C7B\u578B", "\u5BBF\u820D\u6570\u91CF", "\u5907\u6CE8"
 			}
 		));
-		table.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		table.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		scrollPane.setViewportView(table);
 	}
 }

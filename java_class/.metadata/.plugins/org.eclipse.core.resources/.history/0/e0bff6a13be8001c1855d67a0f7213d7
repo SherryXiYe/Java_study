@@ -43,50 +43,50 @@ public class ChangePassword extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("\u5F53\u524D\u7528\u6237\uFF1A");
 		lblNewLabel.setIcon(new ImageIcon("D:\\Java\\eclipse workplace\\dormSystem\\src\\images\\\u8D26\u53F7.png"));
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel.setBounds(36, 21, 147, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel userInfo = new JLabel("["+userType+"] "+userID);
-		userInfo.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		userInfo.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		userInfo.setBounds(176, 21, 277, 29);
 		contentPane.add(userInfo);
 		
 		JLabel lblNewLabel_2 = new JLabel("\u539F\u5BC6\u7801");
-		lblNewLabel_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(102, 90, 108, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("\u65B0\u5BC6\u7801");
-		lblNewLabel_2_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2_1.setBounds(102, 165, 108, 29);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("\u786E\u8BA4\u5BC6\u7801");
-		lblNewLabel_2_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel_2_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		lblNewLabel_2_2.setBounds(91, 240, 108, 29);
 		contentPane.add(lblNewLabel_2_2);
 		
 		oldPass = new JTextField();
-		oldPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		oldPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		oldPass.setBounds(230, 90, 130, 32);
 		contentPane.add(oldPass);
 		oldPass.setColumns(10);
 		
 		newPass = new JTextField();
-		newPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		newPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		newPass.setColumns(10);
 		newPass.setBounds(230, 165, 130, 32);
 		contentPane.add(newPass);
 		
 		reNewPass = new JTextField();
-		reNewPass.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		reNewPass.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		reNewPass.setColumns(10);
 		reNewPass.setBounds(230, 240, 130, 32);
 		contentPane.add(reNewPass);
 		
 		JButton btnNewButton = new JButton("\u786E\u8BA4");
-		btnNewButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 20));
 		btnNewButton.setBounds(380, 288, 126, 37);
 		contentPane.add(btnNewButton);
 		

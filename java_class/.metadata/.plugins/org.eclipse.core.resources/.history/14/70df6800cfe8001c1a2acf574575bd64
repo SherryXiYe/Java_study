@@ -44,7 +44,7 @@ public class DormAdmManage extends JFrame {
 	private JButton deleteButton;
 	@SuppressWarnings("unused")
 	private static DormAdmin selectDormAdm=new DormAdmin();
-	private static final String[] sexType={"","ÄÐ","Å®"};
+	private static final String[] sexType={"","ï¿½ï¿½","Å®"};
 	
 	/**
 	 * Launch the application.
@@ -77,45 +77,45 @@ public class DormAdmManage extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("\u5BBF\u7BA1\u8D26\u53F7");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel.setBounds(50, 21, 108, 29);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("\u5BBF\u7BA1\u540D\u5B57");
-		lblNewLabel_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(372, 21, 108, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("\u7BA1\u7406\u5BBF\u820D\u697C");
-		lblNewLabel_2.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_2.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(35, 81, 108, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("\u6027\u522B");
-		lblNewLabel_3.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		lblNewLabel_3.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		lblNewLabel_3.setBounds(393, 81, 108, 29);
 		contentPane.add(lblNewLabel_3);
 		
 		ID = new JTextField();
-		ID.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		ID.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		ID.setBounds(143, 18, 130, 30);
 		contentPane.add(ID);
 		ID.setColumns(10);
 		
 		name = new JTextField();
-		name.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		name.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		name.setColumns(10);
 		name.setBounds(464, 18, 130, 30);
 		contentPane.add(name);
 		
 		building = new JTextField();
-		building.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		building.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		building.setColumns(10);
 		building.setBounds(143, 78, 130, 30);
 		contentPane.add(building);
 		
 		sexTypeComb = new JComboBox();
-		sexTypeComb.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		sexTypeComb.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		sexTypeComb.setBounds(464, 78, 130, 30);
 		sexTypeComb.setModel(new DefaultComboBoxModel(sexType));
 		contentPane.add(sexTypeComb);
@@ -126,7 +126,7 @@ public class DormAdmManage extends JFrame {
 				queryDormAdm(e);
 			}
 		});
-		queryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		queryButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		queryButton.setFocusable(false);
 		queryButton.setBounds(255, 135, 89, 32);
 		contentPane.add(queryButton);
@@ -142,11 +142,11 @@ public class DormAdmManage extends JFrame {
 				selectRow(e);
 			}
 		});
-		//ÉèÖÃÓÃ»§²»¿ÉÍÏ¶¯
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½
 		dormAdmTable.getTableHeader().setReorderingAllowed(false);
-		//ÉèÖÃ±í¸ñ¸ß¶È
+		//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ß¶ï¿½
 		dormAdmTable.setRowHeight(20);
-		//ÉèÖÃ±í¸ñ¾ÓÖÐÏÔÊ¾
+		//ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
 		DefaultTableCellRenderer r=new DefaultTableCellRenderer();
 		r.setHorizontalAlignment(JLabel.CENTER);
 		dormAdmTable.setDefaultRenderer(Object.class, r);
@@ -167,13 +167,13 @@ public class DormAdmManage extends JFrame {
 		scrollPane.setViewportView(dormAdmTable);
 		
 		JButton insertButton = new JButton("\u589E\u52A0");
-		insertButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		insertButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		insertButton.setFocusable(false);
 		insertButton.setBounds(350, 135, 89, 32);
 		contentPane.add(insertButton);
 		
 		changeButton = new JButton("\u4FEE\u6539");
-		changeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		changeButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		changeButton.setFocusable(false);
 		changeButton.setBounds(445, 135, 89, 32);
 		contentPane.add(changeButton);
@@ -184,7 +184,7 @@ public class DormAdmManage extends JFrame {
 				deleteDormAdm(e);
 			}
 		});
-		deleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 18));
+		deleteButton.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 18));
 		deleteButton.setFocusable(false);
 		deleteButton.setBounds(540, 135, 89, 32);
 		contentPane.add(deleteButton);
@@ -198,22 +198,22 @@ public class DormAdmManage extends JFrame {
 		queryAllDormAdm();
 	}
 
-	//É¾³ýËÞ¹Ü
+	//É¾ï¿½ï¿½ï¿½Þ¹ï¿½
 	protected void deleteDormAdm(ActionEvent e) {
-		boolean confirmDelete=JOptionPane.showConfirmDialog(this, "È·¶¨ÒªÉ¾³ý¸ÃËÞ¹ÜÂð£¿","ÕýÔÚÉ¾³ý¡­¡­",JOptionPane.YES_NO_OPTION)==JOptionPane.OK_OPTION;
+		boolean confirmDelete=JOptionPane.showConfirmDialog(this, "È·ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",JOptionPane.YES_NO_OPTION)==JOptionPane.OK_OPTION;
 		if(confirmDelete){
 			SysAdminDao sysAdmDao=new SysAdminDao();
 			boolean success=sysAdmDao.deleteBuilding(selectDormAdm.getDormAdmID());
 			if(success){
-				JOptionPane.showMessageDialog(this, "É¾³ý³É¹¦£¡");
+				JOptionPane.showMessageDialog(this, "É¾ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½");
 				queryAllDormAdm();
 			}else{
-				JOptionPane.showMessageDialog(this, "É¾³ýÊ§°Ü");
+				JOptionPane.showMessageDialog(this, "É¾ï¿½ï¿½Ê§ï¿½ï¿½");
 			}
 		}
 	}
 
-	//Êó±êµã»÷Ñ¡ÔñÒ»¸öËÞ¹Ü
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Þ¹ï¿½
 	protected void selectRow(MouseEvent e) {
 		selectDormAdm.setDormAdmID(dtm.getValueAt(this.dormAdmTable.getSelectedRow(), 0).toString());
 		selectDormAdm.setName(dtm.getValueAt(this.dormAdmTable.getSelectedRow(), 1).toString());
@@ -229,7 +229,7 @@ public class DormAdmManage extends JFrame {
 		return false;
 	}
 	
-	//²éÑ¯ËÞ¹ÜÐÅÏ¢
+	//ï¿½ï¿½Ñ¯ï¿½Þ¹ï¿½ï¿½ï¿½Ï¢
 	@SuppressWarnings("unchecked")
 	protected void queryDormAdm(ActionEvent e) {
 		String dormAdmID=this.ID.getText();
@@ -259,7 +259,7 @@ public class DormAdmManage extends JFrame {
 		}
 	}
 
-	//²éÑ¯ËùÓÐËÞ¹Ü
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void queryAllDormAdm() {
 		dtm.setRowCount(0);

@@ -38,11 +38,11 @@ public class SysAdmFrame extends JFrame {
 		menuBar.add(mnNewMenu);
 		
 		JMenu mnNewMenu_1 = new JMenu("\u7CFB\u7EDF\u8BBE\u7F6E");
-		mnNewMenu_1.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 19));
+		mnNewMenu_1.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.BOLD, 19));
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("\u4FEE\u6539\u5BC6\u7801");
-		mntmNewMenuItem.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 24));
+		mntmNewMenuItem.setFont(new Font("Î¢ï¿½ï¿½ï¿½Åºï¿½", Font.PLAIN, 24));
 		mnNewMenu_1.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\u9000\u51FA\u767B\u5F55");
