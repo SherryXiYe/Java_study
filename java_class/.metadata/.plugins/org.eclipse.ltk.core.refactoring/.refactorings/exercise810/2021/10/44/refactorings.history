@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;exercise810.testson&apos; to &apos;Testson&apos;&#x0D;&#x0A;- Original project: &apos;exercise810&apos;&#x0D;&#x0A;- Original element: &apos;exercise810.testson&apos;&#x0D;&#x0A;- Renamed element: &apos;exercise810.Testson&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;testson&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;exercise810{testson.java[testson" matchStrategy="1" name="Testson" qualified="false" references="true" similarDeclarations="false" stamp="1635076899691" textual="false" version="1.0"/>
-</session>
