@@ -1,0 +1,122 @@
+package com.view.systemAdm;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.util.List;
+import java.util.Vector;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+import com.bean.Building;
+import com.dao.SysAdminDao;
+
+@SuppressWarnings("serial")
+public class BuildingFrame extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField buildingName;
+	private JTable buildingTable;
+	private DefaultTableModel dtm=null;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BuildingFrame frame = new BuildingFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public BuildingFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 753, 423);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\u5BBF\u820D\u697C\u540D\u79F0");
+		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		lblNewLabel.setBounds(21, 21, 108, 29);
+		contentPane.add(lblNewLabel);
+		
+		buildingName = new JTextField();
+		buildingName.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		buildingName.setBounds(137, 17, 130, 32);
+		contentPane.add(buildingName);
+		buildingName.setColumns(10);
+		
+		JButton queryButton = new JButton("\u67E5\u8BE2");
+		queryButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		queryButton.setBounds(285, 17, 89, 32);
+		contentPane.add(queryButton);
+		
+		JButton insertButton = new JButton("\u589E\u52A0");
+		insertButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		insertButton.setBounds(421, 16, 89, 32);
+		contentPane.add(insertButton);
+		
+		JButton changeButton = new JButton("\u4FEE\u6539");
+		changeButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		changeButton.setBounds(519, 16, 89, 32);
+		contentPane.add(changeButton);
+		
+		JButton deleteButton = new JButton("\u5220\u9664");
+		deleteButton.setFont(new Font("Î¢ÈíÑÅºÚ", Font.PLAIN, 20));
+		deleteButton.setBounds(617, 16, 89, 32);
+		contentPane.add(deleteButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(31, 71, 675, 261);
+		contentPane.add(scrollPane);
+		
+		buildingTable = new JTable();
+		buildingTable.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"\u5BBF\u820D\u697C\u540D\u79F0", "\u5BBF\u820D\u697C\u7C7B\u578B", "\u5BBF\u820D\u6570\u91CF", "\u5907\u6CE8"
+			}
+		));
+		buildingTable.setFont(new Font("SimSun", Font.PLAIN, 12));
+		scrollPane.setViewportView(buildingTable);
+		
+		this.dtm=(DefaultTableModel)buildingTable.getModel();
+		queryAllBuilding();
+	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void queryAllBuilding(){
+		dtm.setRowCount(0);
+		SysAdminDao sysAdmDao=new SysAdminDao();
+		List<Building> allBuildingList=sysAdmDao.queryAllBuilding();
+		for(Building bu:allBuildingList){
+			Vector v=new Vector();
+			v.add(bu.getName());
+			v.add(bu.getType());
+			v.add(bu.getDormNum());
+			v.add(bu.getRemarks());
+			dtm.addRow(v);
+		}
+	}
+}

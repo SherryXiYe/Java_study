@@ -1,0 +1,100 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.bean.SystemAdmin;
+import com.jdbc.JDBC;
+
+public class SysAdminDao {
+	
+	//查询系统管理员
+	public SystemAdmin selectSysAdm(String userID,String password)
+	{
+		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		ResultSet resultSet=null;
+		SystemAdmin sysadm=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, userID);
+			prepareStatement.setString(2, password);
+			//执行sql查询
+			resultSet = prepareStatement.executeQuery();
+			if(resultSet.next())
+			{
+				sysadm=new SystemAdmin(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, resultSet);
+		}
+		return sysadm;
+	}
+	
+	//修改系统管理员密码
+	public boolean changePassword(String userid,String oldPassword, String newPassword){
+		String sqlStr="update system_admin set password=? where systemAdminID=? and password=?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		//ResultSet resultSet=null;
+		//SystemAdmin sysadm=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, newPassword);
+			prepareStatement.setString(2, userid);
+			prepareStatement.setString(3, oldPassword);
+			//执行sql语句
+			if(prepareStatement.executeUpdate()>0)
+			{
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, null);
+		}
+		return false;
+	}
+	
+	public boolean insertBuilding(String buildingName,String buildingType)
+	{
+		String sqlStr="select* from system_admin where systemAdminID=? and password=?";
+		//获得连接对象
+		Connection conn=JDBC.getConnection();
+		//创建预编译环境
+		PreparedStatement prepareStatement=null;
+		ResultSet resultSet=null;
+		SystemAdmin sysadm=null;
+		try {
+			prepareStatement=conn.prepareStatement(sqlStr);
+			//设置sql语句参数
+			prepareStatement.setString(1, userID);
+			prepareStatement.setString(2, password);
+			//执行sql查询
+			resultSet = prepareStatement.executeQuery();
+			if(resultSet.next())
+			{
+				sysadm=new SystemAdmin(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			JDBC.closeConnection(conn, prepareStatement, resultSet);
+		}
+		return sysadm;
+	}
+}
